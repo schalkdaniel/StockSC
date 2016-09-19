@@ -1,0 +1,8 @@
+useDynLib('StockSC')
+
+export(readStock)
+export(create_stocklist)
+
+S3method(plot, stocktable)
+S3method(print, stocktable)
+S3method(plot, stocklist)
