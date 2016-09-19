@@ -6,6 +6,13 @@ create_stocklist <- function(..., stockRanges = '3d')
 {
   stocks <- list(...)
   
+  if( length(stocks[[1]]) > 1 ) {
+    st <- list()
+    for( i in stocks[[1]] ) {
+      st[[i]] <- i
+    }
+    stocks <- st
+  }
   if( length(stockRanges) == 1 ) {
     stockRanges <- rep( stockRanges, length(stocks) )
   }
