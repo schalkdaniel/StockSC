@@ -43,7 +43,7 @@ plot( Stock_AMZN )
 Why a class stocklist?
 ----------------------
 
-The problem after writing the `stocktable` class was, that I didn't know how to wrap anything around layout, which is use for the graphic, for multiple plots. Therefore I create a new class `stocklist` which can do multiple plots of `stocktable` objects.
+The problem after writing the `stocktable` class was, that I didn't know how to wrap anything around layout, which is used for the graphic, for multiple plots. Therefore I create a new class `stocklist` which can do multiple plots of `stocktable` objects.
 
 **Example**
 
