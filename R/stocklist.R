@@ -8,8 +8,8 @@ create_stocklist <- function(..., stockRanges = '3d')
   
   if( length(stocks[[1]]) > 1 ) {
     st <- list()
-    for( i in stocks[[1]] ) {
-      st[[i]] <- i
+    for( i in seq( along = stocks[[1]] ) ) {
+      st[[i]] <- stocks[[1]][i]
     }
     stocks <- st
   }
