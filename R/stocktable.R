@@ -69,7 +69,7 @@ readStock <- function(stock, stockRange)
   names(DF)[1] <- 'Date'
   
   if( sub( unit_str, '', X[unit] ) == 'MIN' ) {
-    DF[, 1] <- as.Date( as.POSIXct(DF[, 1], origin = "1970-01-01") )
+    DF[, 1] <- as.POSIXct(DF[, 1], origin = "1970-01-01")
   }
   if( sub( unit_str, '', X[unit] ) %in% c('DAY', 'WEEK') ) {
     DF[, 1] <- as.Date( as.character(DF[, 1]), format = '%Y%m%d')
@@ -128,6 +128,10 @@ plot.stocktable <- function( obj,
                              macdsignal  = 9,
                              legend      = TRUE )
 {
+  if( attr( obj, 'Time Unit' ) == 'MIN' ) {
+    obj$Date <- as.Date( obj$Date )
+  }
+  
   par( mar = c(5.1, 4.1, 4.1, 2.1) )
   par_default <- par()
   
