@@ -84,6 +84,10 @@ plot.stocklist <- function( stocklist,
   for( i in seq( along = stocklist) ) {
     obj <- stocklist[[i]]
     
+    if( attr( obj, 'Time Unit' ) == 'MIN' ) {
+      obj$Date <- as.Date( obj$Date )
+    }
+    
     limits <- c(min(obj$low), max(obj$high)) + c(-1, 1) * (max(obj$high) - min(obj$low)) / 4
     
     if( MA ) {
