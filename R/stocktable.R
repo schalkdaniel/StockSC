@@ -69,7 +69,7 @@ readStock <- function(stock, stockRange)
   names(DF)[1] <- 'Date'
   
   if( sub( unit_str, '', X[unit] ) == 'MIN' ) {
-    DF[, 1] <- as.POSIXct(DF[, 1], origin = "1970-01-01")
+    DF[, 1] <- format( as.POSIXct(DF[, 1], origin = "1970-01-01"), '%Y-%m-%d %H:%M' )
   }
   if( sub( unit_str, '', X[unit] ) %in% c('DAY', 'WEEK') ) {
     DF[, 1] <- as.Date( as.character(DF[, 1]), format = '%Y%m%d')
