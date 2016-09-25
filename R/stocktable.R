@@ -210,6 +210,23 @@ plot.stocktable <- function( obj,
   xaxp <- seq( par()$xaxp[1], par()$xaxp[2], length.out = par()$xaxp[3] + 1 )  
   yaxp <- seq( par()$yaxp[1], par()$yaxp[2], length.out = par()$yaxp[3] + 1 )
   
+  if( length(labs) <= 10 ) {
+    segments( x0  = xlabs, 
+              y0  = par()$usr[3], 
+              x1  = xlabs, 
+              y1  = par()$usr[4],
+              col = rgb(255, 255, 255, 150, maxColorValue = 255),
+              lty = 3 )
+    
+  } else {
+    segments( x0  = xaxp, 
+              y0  = par()$usr[3], 
+              x1  = xaxp, 
+              y1  = par()$usr[4],
+              col = rgb(255, 255, 255, 150, maxColorValue = 255),
+              lty = 3 )
+  }
+  
   polygon( x      = c(1:length(rsi), length(rsi):1),
            y      = c(ifelse( rsi <= 30, rsi, 30), rep(30, length(rsi))),
            border = rgb(26, 135, 130, 255, maxColorValue = 255),
@@ -270,14 +287,7 @@ plot.stocktable <- function( obj,
   xaxp <- seq( par()$xaxp[1], par()$xaxp[2], length.out = par()$xaxp[3] + 1 )
   yaxp <- seq( par()$yaxp[1], par()$yaxp[2], length.out = par()$yaxp[3] + 1 )
   
-  if( length(labs) <= length(xaxp) ) {
-    abline( v   = xlabs,
-            col = rgb(255, 255, 255, 150, maxColorValue = 255),
-            lty = 3 )
-    
-  }
-  
-  if( length(labs) <= length(xaxp) ) {
+  if( length(labs) <= 10 ) {
     segments( x0  = xlabs, 
               y0  = par()$usr[3], 
               x1  = xlabs, 
@@ -481,6 +491,23 @@ plot.stocktable <- function( obj,
           xlab = '',
           ylab = '',
           ylim = limits + c(-0.8 * diff(limits), 0.3 * diff(limits)) )
+  }
+  
+  if( length(labs) <= 10 ) {
+    segments( x0  = xlabs, 
+              y0  = par()$usr[3], 
+              x1  = xlabs, 
+              y1  = par()$usr[4],
+              col = rgb(255, 255, 255, 150, maxColorValue = 255),
+              lty = 3 )
+    
+  } else {
+    segments( x0  = xaxp, 
+              y0  = par()$usr[3], 
+              x1  = xaxp, 
+              y1  = par()$usr[4],
+              col = rgb(255, 255, 255, 150, maxColorValue = 255),
+              lty = 3 )
   }
   
   polygon( x      = c( which(!is.na(hist)), 
