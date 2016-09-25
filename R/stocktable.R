@@ -206,7 +206,9 @@ plot.stocktable <- function( obj,
                        paste0( attr(obj, 'Company'), ' (', attr(obj, 'Stock'), ')') ),
         ylab = '' )
   
-  yaxp  <- seq( par()$yaxp[1], par()$yaxp[2], length.out = par()$yaxp[3] + 1 )
+  
+  xaxp <- seq( par()$xaxp[1], par()$xaxp[2], length.out = par()$xaxp[3] + 1 )  
+  yaxp <- seq( par()$yaxp[1], par()$yaxp[2], length.out = par()$yaxp[3] + 1 )
   
   polygon( x      = c(1:length(rsi), length(rsi):1),
            y      = c(ifelse( rsi <= 30, rsi, 30), rep(30, length(rsi))),
@@ -241,6 +243,13 @@ plot.stocktable <- function( obj,
             x1 = xlabs,
             y1 = yaxp[1] - 0.3 * diff(yaxp[c(1, length(yaxp))]),
             col = 'white' )
+  
+  if( length(labs) <= length(xaxp) ) {
+    abline( v   = xlabs,
+            col = rgb(255, 255, 255, 150, maxColorValue = 255),
+            lty = 3 )
+    
+  }
   
   box( col = '#5998ff', 
        lwd = 1.5 )
