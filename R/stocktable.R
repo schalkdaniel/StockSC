@@ -215,7 +215,7 @@ plot.stocktable <- function( obj,
               y0  = par()$usr[3], 
               x1  = xlabs, 
               y1  = par()$usr[4],
-              col = rgb(255, 255, 255, 150, maxColorValue = 255),
+              col = rgb(255, 255, 255, 100, maxColorValue = 255),
               lty = 3 )
     
   } else {
@@ -223,7 +223,7 @@ plot.stocktable <- function( obj,
               y0  = par()$usr[3], 
               x1  = xaxp, 
               y1  = par()$usr[4],
-              col = rgb(255, 255, 255, 150, maxColorValue = 255),
+              col = rgb(255, 255, 255, 100, maxColorValue = 255),
               lty = 3 )
   }
   
@@ -498,7 +498,7 @@ plot.stocktable <- function( obj,
               y0  = par()$usr[3], 
               x1  = xlabs, 
               y1  = par()$usr[4],
-              col = rgb(255, 255, 255, 150, maxColorValue = 255),
+              col = rgb(255, 255, 255, 100, maxColorValue = 255),
               lty = 3 )
     
   } else {
@@ -506,7 +506,7 @@ plot.stocktable <- function( obj,
               y0  = par()$usr[3], 
               x1  = xaxp, 
               y1  = par()$usr[4],
-              col = rgb(255, 255, 255, 150, maxColorValue = 255),
+              col = rgb(255, 255, 255, 100, maxColorValue = 255),
               lty = 3 )
   }
   
