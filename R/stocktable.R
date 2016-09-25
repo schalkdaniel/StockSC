@@ -271,6 +271,13 @@ plot.stocktable <- function( obj,
   yaxp <- seq( par()$yaxp[1], par()$yaxp[2], length.out = par()$yaxp[3] + 1 )
   
   if( length(labs) <= length(xaxp) ) {
+    abline( v   = xlabs,
+            col = rgb(255, 255, 255, 150, maxColorValue = 255),
+            lty = 3 )
+    
+  }
+  
+  if( length(labs) <= length(xaxp) ) {
     segments( x0  = xlabs, 
               y0  = par()$usr[3], 
               x1  = xlabs, 
