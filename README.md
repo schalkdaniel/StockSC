@@ -1,3 +1,6 @@
+**YAHOO API IS DOWN OR MOVED TO ANOTHER ADRESS! THE FUNCTIONS AREN'T WORKING ANYMORE!**
+
+
 StockScreener
 =============
 This small package give two objects, a `stocktable` which is nothing else that a `data.frame` filled with stock data of a specific share and `stocklist` which is just a list of `stocktable` objects. The main reason for the class `stocktable` is the (in my opinion pretty) plot function.
