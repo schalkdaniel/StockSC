@@ -13,7 +13,7 @@ Example
 -------
 To pull the amazon data just type in R:
 ```{r}
-Stock_AMZN <- readStock( 'AMZN', '3d' )
+Stock_AMZN = readStock( 'AMZN', '3d' )
 ```
 The `print` generic yields the following output:
 ```
